@@ -24,22 +24,12 @@ public class SpecialtyService {
         return q/w;
     }
 
-//    public Specialty getSpecialtyById(long id){
-//        return specialtyRepository.findById(id).orElseThrow(() -> new RuntimeException("Specialty not found"));
-//    }
+
 
     public Specialty addSpecialty(Specialty specialty){
         return specialtyRepository.save(specialty);
     }
 
-//    public Specialty updateSpecialty(long id,Specialty specialty){
-//        Specialty existing = getSpecialtyById(id);
-//        existing.setName(specialty.getName());
-//        return specialtyRepository.save(existing);
-//    }
-//
-//    public void deleteSpecialty(long id){
-//        specialtyRepository.deleteById(id);
-//    }
+
 
 }

@@ -7,11 +7,31 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
   datasource:
-    url: jdbc:postgresql://dpg-d01mp93uibrs73aveqn0-a.oregon-postgres.render.com/krsanguinar
-    username: izzet
-    password: pNlqt6VmrY6fls7zPc6WrJUHJQWzgvVk
+    url: jdbc:postgresql://dpg-d0lf0l56ubrc73c1dce0-a.oregon-postgres.render.com/runetotem
+    username: runetotem
+    password: B60qrMmJNJoQllZUSqpEtxsRhsutTqLV
     driverClassName: org.postgresql.Driver
+
   sql:
     init:
       platform: postgres
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Ov23liXUBDKiWGZxqSyu
+            client-secret: 8a27527bb4ebe52bf11613af7c9fa889315db5f8
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope:
+              - read:user
+              - user:email
+        provider:
+          github:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+            user-name-attribute: login
